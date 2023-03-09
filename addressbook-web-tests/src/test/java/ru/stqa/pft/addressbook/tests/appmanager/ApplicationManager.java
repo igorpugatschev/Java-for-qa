@@ -1,15 +1,13 @@
-package ru.stqa.pft.addressbook.tests;
+package ru.stqa.pft.addressbook.tests.appmanager;
 
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import ru.stqa.pft.addressbook.tests.model.GroupData;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class TestBase {
-
+public class ApplicationManager {
     JavascriptExecutor js;
     private WebDriver driver;
     private Map<String, Object> vars;
@@ -23,8 +21,7 @@ public class TestBase {
         }
     }
 
-    @Before
-    public void setUp() {
+    public void init() {
         driver = new FirefoxDriver();
         js = (JavascriptExecutor) driver;
         vars = new HashMap<String, Object>();
@@ -54,16 +51,15 @@ public class TestBase {
 
     }
 
-
-    protected void returnToGroupPage() {
+    public void returnToGroupPage() {
         driver.findElement(By.xpath("//a[contains(text(),\'group page\')]")).click();
     }
 
-    protected void submitGroupCreation() {
+    public void submitGroupCreation() {
         driver.findElement(By.xpath("//input[@name=\'submit\']")).click();
     }
 
-    protected void fillGroupForm(GroupData groupData) {
+    public void fillGroupForm(GroupData groupData) {
         driver.findElement(By.xpath("//input[@name=\'group_name\']")).click();
         driver.findElement(By.xpath("//input[@name=\'group_name\']")).sendKeys(groupData.getName());
         driver.findElement(By.xpath("//textarea[@name=\'group_header\']")).click();
@@ -72,21 +68,18 @@ public class TestBase {
         driver.findElement(By.xpath("//textarea[@name=\'group_footer\']")).sendKeys(groupData.getFooter());
     }
 
-    protected void initGroupCreation() {
+    public void initGroupCreation() {
         driver.findElement(By.xpath("//input[@name=\'new\']")).click();
     }
 
-    protected void gotoGroupPage() {
+    public void gotoGroupPage() {
         driver.findElement(By.xpath("//a[contains(text(),\'groups\')]")).click();
     }
 
-    @After
-
-
-    public void tearDown() {
-        //logOut();
+    public void stop() {
         driver.quit();
     }
+
     private void logOut() {
         // 12 | click | xpath=//a[contains(text(),'home')] |
         driver.findElement(By.xpath("//a[contains(text(),\'home\')]")).click();
@@ -96,11 +89,11 @@ public class TestBase {
         driver.close();
     }
 
-    protected void deleteGroup() {
+    public void deleteGroup() {
       driver.findElement(By.xpath("//input[@name=\'delete\']")).click();
     }
 
-    protected void selectGroup() {
+    public void selectGroup() {
       driver.findElement(By.xpath("//input[@name=\'selected[]\']")).click();
     }
 }
