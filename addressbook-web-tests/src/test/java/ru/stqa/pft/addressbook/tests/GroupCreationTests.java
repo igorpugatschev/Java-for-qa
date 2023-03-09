@@ -38,7 +38,7 @@ public class GroupCreationTests {
 
         gotoGroupPage();
         initGroupCreation();
-        fillGroupForm("group 1", "header of group 1", "footer of group 1");
+        fillGroupForm(new GroupData("group 1", "header of group 1", "footer of group 1"));
         submitGroupCreation();
         returnToGroupPage();
 
@@ -52,13 +52,13 @@ public class GroupCreationTests {
         driver.findElement(By.xpath("//input[@name=\'submit\']")).click();
     }
 
-    private void fillGroupForm(String name, String header, String footer) {
+    private void fillGroupForm(GroupData groupData) {
         driver.findElement(By.xpath("//input[@name=\'group_name\']")).click();
-        driver.findElement(By.xpath("//input[@name=\'group_name\']")).sendKeys(name);
+        driver.findElement(By.xpath("//input[@name=\'group_name\']")).sendKeys(groupData.getName());
         driver.findElement(By.xpath("//textarea[@name=\'group_header\']")).click();
-        driver.findElement(By.xpath("//textarea[@name=\'group_header\']")).sendKeys(header);
+        driver.findElement(By.xpath("//textarea[@name=\'group_header\']")).sendKeys(groupData.getHeader());
         driver.findElement(By.xpath("//textarea[@name=\'group_footer\']")).click();
-        driver.findElement(By.xpath("//textarea[@name=\'group_footer\']")).sendKeys(footer);
+        driver.findElement(By.xpath("//textarea[@name=\'group_footer\']")).sendKeys(groupData.getFooter());
     }
 
     private void initGroupCreation() {
