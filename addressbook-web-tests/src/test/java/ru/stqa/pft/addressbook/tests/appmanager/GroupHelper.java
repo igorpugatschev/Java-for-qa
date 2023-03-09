@@ -39,4 +39,12 @@ public class GroupHelper {
     public void selectGroup() {
       driver.findElement(By.xpath("//input[@name=\'selected[]\']")).click();
     }
+
+    public void initGroupModification() {
+        driver.findElement(By.xpath("//input[@name=\'edit[]\']")).click();
+    }
+
+    public void submitGroupModification() {
+        driver.findElement(By.xpath("//input[@name=\'update[]\']")).click();
+    }
 }
