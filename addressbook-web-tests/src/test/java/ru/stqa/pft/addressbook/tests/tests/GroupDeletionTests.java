@@ -7,13 +7,13 @@ public class GroupDeletionTests extends TestBase {
   @Test
   public void testGroupDeletion() {
 
-    app.gotoGroupPage();
+    app.getNavigationHelper().gotoGroupPage();
     // 9 | click | xpath=//input[@name='selected[]'] | 
-    app.selectGroup();
+    app.getGroupHelper().selectGroup();
     // 10 | click | xpath=//input[@name='delete'] | 
-    app.deleteGroup();
+    app.getGroupHelper().deleteGroup();
     // 11 | click | xpath=//a[contains(text(),'group page')] | 
-    app.returnToGroupPage();
+    app.getGroupHelper().returnToGroupPage();
 
   }
 
