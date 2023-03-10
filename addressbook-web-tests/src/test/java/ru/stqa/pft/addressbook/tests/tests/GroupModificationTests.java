@@ -1,6 +1,6 @@
 package ru.stqa.pft.addressbook.tests.tests;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 import ru.stqa.pft.addressbook.tests.model.GroupData;
 
 public class GroupModificationTests extends TestBase{
@@ -15,3 +15,14 @@ public class GroupModificationTests extends TestBase{
         app.getGroupHelper().returnToGroupPage();
     }
 }
+/*
+> Task :test FAILED
+
+Execution failed for task ':test'.
+> No tests found for given includes: [ru.stqa.pft.addressbook.tests.tests.GroupModificationTests](--tests filter)
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+ */
