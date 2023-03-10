@@ -11,6 +11,14 @@ public class NavigationHelper {
     }
 
     public void gotoGroupPage() {
+       
         driver.findElement(By.xpath("//a[contains(text(),\'groups\')]")).click();
     }
-}
+
+    public void gotoHomePage() {
+       driver.findElement(By.xpath("//a[contains(text(),\'home\')]")).click();
+    }
+
+
+
+    }

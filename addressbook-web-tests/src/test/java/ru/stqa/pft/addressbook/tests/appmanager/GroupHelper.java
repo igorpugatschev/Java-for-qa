@@ -41,7 +41,7 @@ public class GroupHelper {
     }
 
     public void initGroupModification() {
-        driver.findElement(By.xpath("//input[@name=\'edit[2]\']")).click();
+        driver.findElement(By.xpath("(//input[@name=\'edit\'])[2]")).click();;
     }
 
     public void submitGroupModification() {

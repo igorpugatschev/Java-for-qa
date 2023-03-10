@@ -50,12 +50,7 @@ public class ApplicationManager {
     }
 
     private void logOut() {
-        // 12 | click | xpath=//a[contains(text(),'home')] |
-        driver.findElement(By.xpath("//a[contains(text(),\'home\')]")).click();
-        // 13 | click | xpath=//a[contains(text(),'Logout')] |
         driver.findElement(By.xpath("//a[contains(text(),\'Logout\')]")).click();
-        // 14 | close |  |
-        driver.close();
     }
 
     public GroupHelper getGroupHelper() {
