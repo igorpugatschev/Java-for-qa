@@ -1,0 +1,4 @@
+3048 [Test worker] INFO  r.s.pft.addressbook.tests.TestBase - Stop test groupBadCreateTest with parameters []
+3134 [Test worker] INFO  r.s.pft.addressbook.tests.TestBase - Stop test groupCreateTest with parameters [GroupData{id='2147483647', name='test 0'}]
+3136 [Test worker] INFO  r.s.pft.addressbook.tests.TestBase - Stop test groupCreateTest with parameters [GroupData{id='2147483647', name='test 1'}]
+3138 [Test worker] INFO  r.s.pft.addressbook.tests.TestBase - Stop test groupCreateTest with parameters [GroupData{id='2147483647', name='test 2'}]
