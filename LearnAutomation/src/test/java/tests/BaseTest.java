@@ -1,3 +1,5 @@
+package tests;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
@@ -8,13 +10,19 @@ import org.testng.annotations.DataProvider;
 import java.io.File;
 
 public abstract class BaseTest {
-    protected WebDriver driver;
+
+
+    private static WebDriver driver;
+    public static WebDriver getDriver() {
+        return driver;
+    }
     @BeforeClass
     public void setUp(){
         File file = new File("src/test/resources/geckodriver.exe");//подключаем драйвер браузера
         System.setProperty("webdriver.Firefox.driver", file.getAbsolutePath());//передаём путь к драйверу в системные переменные
         driver = new FirefoxDriver();//создаём объект драйвер
         driver.get("https://www.google.com/");//переход по указанной ссылке
+        System.out.println(driver.getTitle());//выводим в консоль заголовок страницы
         }
 
 
