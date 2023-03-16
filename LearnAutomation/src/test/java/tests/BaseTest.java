@@ -7,6 +7,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import steps.SearchSteps;
+import utils.Browser;
+import utils.DriverFactiory;
 
 import java.io.File;
 
@@ -20,9 +22,7 @@ public abstract class BaseTest {
     }
     @BeforeClass
     public void setUp() {
-        File file = new File("src/test/resources/geckodriver.exe");//подключаем драйвер браузера
-        System.setProperty("webdriver.Firefox.driver", file.getAbsolutePath());//передаём путь к драйверу в системные переменные
-        driver = new FirefoxDriver();//создаём объект драйвер
+        driver = DriverFactiory.getDriver(Browser.CHROME);
         driver.get("https://www.google.com/");//переход по указанной ссылке
         steps = new SearchSteps();
     }

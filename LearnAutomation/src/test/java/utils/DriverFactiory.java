@@ -1,0 +1,49 @@
+package utils;
+
+import com.sun.javafx.geom.Edge;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import java.io.File;
+
+public class DriverFactiory {
+
+    private static WebDriver driver;
+    private final static String DRIVER_PATH = "src/test/resources/";
+
+    public static WebDriver getDriver(Browser browser) {
+        File file;
+
+        switch (browser) {
+            case CHROME:
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--remote-allow-origins=*");
+                file = new File(DRIVER_PATH + "chromedriver.exe");//подключаем драйвер браузера
+                System.setProperty("webdriver.http.factory", "jdk-http-client");
+                System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());//передаём путь к драйверу в системные переменные
+                driver = new ChromeDriver(options);//создаём объект драйвер
+                break;
+
+            case FIREFOX:
+                file = new File(DRIVER_PATH + "geckodriver.exe");//подключаем драйвер браузера
+                System.setProperty("webdriver.Firefox.driver", file.getAbsolutePath());//передаём путь к драйверу в системные переменные
+                driver = new FirefoxDriver();//создаём объект драйвер
+                break;
+
+            case EDGE:
+                file = new File(DRIVER_PATH + "msedgedriver.exe");//подключаем драйвер браузера
+                System.setProperty("webdriver.Edge.driver", file.getAbsolutePath());//передаём путь к драйверу в системные переменные
+                driver = new EdgeDriver();//создаём объект драйвер
+                break;
+
+        }
+        driver.manage().window().maximize();
+        return driver;
+    }
+
+
+}
