@@ -1,26 +1,24 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class SearchPage extends BasePage {
 
-    private By searchField = By.xpath("//input[@name='q']");
-    //WebElement searchField = driver.findElement(By.xpath("//input[@name='q']"));
+    @FindBy(xpath = ("//input[@name='q']"))
+    private WebElement searchField;
 
     public SearchPage() {
         super();
     }
 
-    public void fillSearchField(String text){
-        WebElement searchFieldElement = driver.findElement(searchField);
-        searchFieldElement.click();
-        searchFieldElement.sendKeys(text);
+    public void fillSearchField(String text) {
+        searchField.click();
+        searchField.sendKeys(text);
     }
 
-    public void pressEnter(){
-        WebElement searchFieldElement = driver.findElement(searchField);
-        searchFieldElement.sendKeys(Keys.ENTER);
+    public void pressEnter() {
+        searchField.sendKeys(Keys.ENTER);
     }
 }
