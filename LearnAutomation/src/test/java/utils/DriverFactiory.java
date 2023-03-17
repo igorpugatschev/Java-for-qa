@@ -30,13 +30,13 @@ public class DriverFactiory {
 
             case FIREFOX:
                 file = new File(DRIVER_PATH + "geckodriver.exe");//подключаем драйвер браузера
-                System.setProperty("webdriver.Firefox.driver", file.getAbsolutePath());//передаём путь к драйверу в системные переменные
+                System.setProperty("webdriver.gecko.driver", file.getAbsolutePath());//передаём путь к драйверу в системные переменные
                 driver = new FirefoxDriver();//создаём объект драйвер
                 break;
 
             case EDGE:
                 file = new File(DRIVER_PATH + "msedgedriver.exe");//подключаем драйвер браузера
-                System.setProperty("webdriver.Edge.driver", file.getAbsolutePath());//передаём путь к драйверу в системные переменные
+                System.setProperty("webdriver.edge.driver", file.getAbsolutePath());//передаём путь к драйверу в системные переменные
                 driver = new EdgeDriver();//создаём объект драйвер
                 break;
 

@@ -22,7 +22,7 @@ public abstract class BaseTest {
     }
     @BeforeClass
     public void setUp() {
-        driver = DriverFactiory.getDriver(Browser.CHROME);
+        driver = DriverFactiory.getDriver(Browser.FIREFOX);
         driver.get("https://www.google.com/");//переход по указанной ссылке
         steps = new SearchSteps();
     }
