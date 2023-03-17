@@ -8,6 +8,7 @@ import org.testng.annotations.DataProvider;
 import steps.SearchSteps;
 import utils.Browser;
 import utils.DriverFactory;
+import utils.PropertyReader;
 
 public abstract class BaseTest {
 
@@ -19,8 +20,8 @@ public abstract class BaseTest {
     }
     @BeforeClass
     public void setUp() {
-        driver = DriverFactory.getDriver(Browser.FIREFOX);
-        driver.get("https://www.google.com/");//переход по указанной ссылке
+        driver = DriverFactory.getDriver(PropertyReader.getBrowser());
+        driver.get(PropertyReader.getBaseUrl());//переход по указанной ссылке
         steps = new SearchSteps();
     }
 
