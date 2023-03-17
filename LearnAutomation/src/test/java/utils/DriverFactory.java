@@ -1,16 +1,14 @@
 package utils;
 
-import com.sun.javafx.geom.Edge;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
 
-public class DriverFactiory {
+public class DriverFactory {
 
     private static WebDriver driver;
     private final static String DRIVER_PATH = "src/test/resources/";
