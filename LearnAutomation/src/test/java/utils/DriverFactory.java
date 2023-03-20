@@ -8,6 +8,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.File;
 
+
+
 public class DriverFactory {
 
     private static WebDriver driver;
@@ -30,6 +32,7 @@ public class DriverFactory {
                 file = new File(DRIVER_PATH + "geckodriver.exe");//подключаем драйвер браузера
                 System.setProperty("webdriver.gecko.driver", file.getAbsolutePath());//передаём путь к драйверу в системные переменные
                 driver = new FirefoxDriver();//создаём объект драйвер
+
                 break;
 
             case EDGE:
