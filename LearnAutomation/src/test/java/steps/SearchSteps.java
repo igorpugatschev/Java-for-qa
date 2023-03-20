@@ -8,7 +8,7 @@ public class SearchSteps {
 
     public SearchResultSteps executeSearchByKeyword(String keyword) throws InterruptedException {
         searchPage.fillSearchField(keyword);
-        searchPage.pressEnter();
+        searchPage.clickSearchButtonOrPressEnter();
         return new SearchResultSteps();
     }
 

@@ -23,7 +23,7 @@ public class SearchResultPage extends BasePage {
     }
 
     public void assertThatTopResultContainsCorrectText(String expected) {
-        //wait.until(ExpectedConditions.visibilityOfAllElements(resultRows));
+        //wait.until(ExpectedConditions.visibilityOfAllElements(resultRows)); //не работает ожидание всех элементов
         assertThat(resultRows.stream().map(e->e.getText()).collect(Collectors.toList()).toString())
                 .as("Wrong text has been displayed!").contains(expected);
     }
