@@ -24,6 +24,10 @@ public class SearchPage extends BasePage {
         searchField.sendKeys(text);
     }
 
+    public void pasteToSearchField(String text){
+        pasteTextToElementFromClipboard(searchField, text);
+    }
+
     public void pressEnter() {
         searchField.sendKeys(Keys.ENTER);
     }
