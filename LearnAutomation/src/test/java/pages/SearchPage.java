@@ -42,7 +42,8 @@ public class SearchPage extends BasePage {
     public void clickSearchButtonOrPressEnter() throws InterruptedException {
         if (isElementFound(By.xpath("//input[@name='btnK']"), 3)) {
             wait.until(ExpectedConditions.elementToBeClickable(searchButton));
-            searchButton.click();
+            //searchButton.click();
+            clickWithJavascript(searchButton);
         } else {
             pressEnter();
         }
