@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -19,10 +20,14 @@ public abstract class BasePage {
 
     WebDriver driver;
     WebDriverWait wait;
+
+    Actions builder;
     public BasePage() {
         this.driver = getDriver();
         PageFactory.initElements(driver, this);
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        builder = new Actions(driver);
+        
     }
 
     boolean isElementFound(By by, int timeout) throws InterruptedException {

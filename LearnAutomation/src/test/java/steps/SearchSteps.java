@@ -13,4 +13,14 @@ public class SearchSteps {
         return new SearchResultSteps();
     }
 
+    public SearchSteps openTooltip() {
+        searchPage.moveToVoiceSearchButton();
+        return this;
+    }
+
+    public SearchSteps verifyThatTooltipContainsPropperText(String text){
+        searchPage.assertThatVoiceSearchTooltipContainsText(text);
+        return this;
+    }
+
 }

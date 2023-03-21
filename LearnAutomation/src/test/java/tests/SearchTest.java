@@ -16,5 +16,12 @@ public class SearchTest extends BaseTest {
 
         }
 
+    @Test
+    public void verifySearchByVoiceTooltipOnGoogle(){
+        steps.openTooltip()
+                .verifyThatTooltipContainsPropperText("Голосовой поиск");
+    }
+
+
 
 }
