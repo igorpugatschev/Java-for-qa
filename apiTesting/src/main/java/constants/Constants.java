@@ -10,7 +10,7 @@ public class Constants {
     }
 
     public static class Servers {
-        public static String SWAPI_URL = "https://swapi.co/";
+        public static String SWAPI_URL = "https://swapi.dev/";
         public static String QA_MESTO_URL = "https://qa-mesto.praktikum-services.ru/";
     }
 
