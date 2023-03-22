@@ -71,12 +71,12 @@
                 <version>3.0.0</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFiles>
+                        <suiteXmlFile>
                             AllTests.xml
-                        </suiteXmlFiles>
+                        </suiteXmlFile>
                     </suiteXmlFiles>
                     <reportsDirectory>
-
+                        C:\ProgramData\Jenkins\.jenkins\workspace\TestAutomationRun\target
                     </reportsDirectory>
                 </configuration>
             </plugin>

@@ -1,1 +1,10 @@
-C:\Java-for-qa\LearnAutomation\src\test\java\SearchTest.java
+C:\Java-for-qa\LearnAutomation\src\test\java\tests\BaseTest.java
+C:\Java-for-qa\LearnAutomation\src\test\java\steps\SearchResultSteps.java
+C:\Java-for-qa\LearnAutomation\src\test\java\steps\SearchSteps.java
+C:\Java-for-qa\LearnAutomation\src\test\java\tests\SearchTest.java
+C:\Java-for-qa\LearnAutomation\src\test\java\utils\PropertyReader.java
+C:\Java-for-qa\LearnAutomation\src\test\java\pages\BasePage.java
+C:\Java-for-qa\LearnAutomation\src\test\java\pages\SearchResultPage.java
+C:\Java-for-qa\LearnAutomation\src\test\java\pages\SearchPage.java
+C:\Java-for-qa\LearnAutomation\src\test\java\utils\Browser.java
+C:\Java-for-qa\LearnAutomation\src\test\java\utils\DriverFactory.java
