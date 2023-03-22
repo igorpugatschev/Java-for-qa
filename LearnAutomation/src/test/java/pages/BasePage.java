@@ -18,6 +18,7 @@ public abstract class BasePage {
     WebDriverWait wait;
     Actions builder;
     JavascriptExecutor executor;
+
     public BasePage() {
         this.driver = getDriver();
         PageFactory.initElements(driver, this);
@@ -25,6 +26,7 @@ public abstract class BasePage {
         builder = new Actions(driver);
         executor = (JavascriptExecutor) driver;
     }
+
     boolean isElementFound(By by, int timeout) throws InterruptedException {
         List<WebElement> elements = driver.findElements(by);
         for (int i = 0; (i < timeout) && (elements.size() == 0); i++) {
@@ -33,6 +35,7 @@ public abstract class BasePage {
         }
         return elements.size() > 0;
     }
+
     void pasteTextToElementFromClipboard(WebElement element, String text) {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Clipboard clipboard = toolkit.getSystemClipboard();
@@ -40,7 +43,8 @@ public abstract class BasePage {
         clipboard.setContents(stringSelection, null);
         element.sendKeys(Keys.CONTROL, "v");
     }
+
     void clickWithJavascript(WebElement element) {
-        executor.executeScript("arguments[0].click()",element);
+        executor.executeScript("arguments[0].click()", element);
     }
 }

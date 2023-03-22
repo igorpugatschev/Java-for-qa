@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
 public class SearchPage extends BasePage {
 
     @FindBy(xpath = ("//input[@name='q']"))
@@ -18,7 +19,7 @@ public class SearchPage extends BasePage {
     @FindBy(xpath = "//body")
     private WebElement pageBody;
 
-    @FindBy(css="div.XDyW0e")
+    @FindBy(css = "div.XDyW0e")
     private WebElement searchByVoiceButton;
 
 
@@ -31,7 +32,7 @@ public class SearchPage extends BasePage {
         searchField.sendKeys(text);
     }
 
-    public void pasteToSearchField(String text){
+    public void pasteToSearchField(String text) {
         pasteTextToElementFromClipboard(searchField, text);
     }
 
@@ -49,12 +50,12 @@ public class SearchPage extends BasePage {
         }
     }
 
-    public void moveToVoiceSearchButton(){
+    public void moveToVoiceSearchButton() {
         builder.moveToElement(searchByVoiceButton).build().perform();
     }
 
-    public void assertThatVoiceSearchTooltipContainsText (String text){
-        assertThat(pageBody.findElements(By.xpath("//*[contains(text(),'"+text+"')]")).size())
-                .as("Expected tooltip ["+text+"] was not found").isNotZero();
+    public void assertThatVoiceSearchTooltipContainsText(String text) {
+        assertThat(pageBody.findElements(By.xpath("//*[contains(text(),'" + text + "')]")).size())
+                .as("Expected tooltip [" + text + "] was not found").isNotZero();
     }
 }

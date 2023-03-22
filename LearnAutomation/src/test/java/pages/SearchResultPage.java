@@ -2,8 +2,6 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -24,7 +22,7 @@ public class SearchResultPage extends BasePage {
 
     public void assertThatTopResultContainsCorrectText(String expected) {
         //wait.until(ExpectedConditions.visibilityOfAllElements(resultRows)); //не работает ожидание всех элементов
-        assertThat(resultRows.stream().map(e->e.getText()).collect(Collectors.toList()).toString())
+        assertThat(resultRows.stream().map(e -> e.getText()).collect(Collectors.toList()).toString())
                 .as("Wrong text has been displayed!").contains(expected);
     }
 

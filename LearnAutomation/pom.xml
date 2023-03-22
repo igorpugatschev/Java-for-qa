@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -11,6 +11,12 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <selenium.version>4.7.2</selenium.version>
+        <testng.version>7.0.0</testng.version>
+        <assertj.version>3.24.2</assertj.version>
+        <slf4j-simple.version>1.7.5</slf4j-simple.version>
+        <slf4j-api.version>1.7.5</slf4j-api.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
@@ -18,7 +24,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.7.2</version>
+            <version>${selenium.version}</version>
         </dependency>
 
         <dependency>
@@ -31,7 +37,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.0.0</version>
+            <version>${testng.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -39,24 +45,42 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.5</version>
+            <version>${slf4j-api.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.7.5</version>
+            <version>${slf4j-simple.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.24.2</version>
+            <version>${assertj.version}</version>
             <scope>test</scope>
         </dependency>
-
-
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFiles>
+                            AllTests.xml
+                        </suiteXmlFiles>
+                    </suiteXmlFiles>
+                    <reportsDirectory>
+
+                    </reportsDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

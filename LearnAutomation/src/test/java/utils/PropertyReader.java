@@ -1,6 +1,5 @@
 package utils;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -11,9 +10,11 @@ public class PropertyReader {
     public static String getBaseUrl() {
         return getProperty("url");
     }
+
     public static Browser getBrowser() {
         return Browser.valueOf(getProperty("browser"));
     }
+
     private static String getProperty(String propertyName) {
         if (System.getProperty(propertyName) == null) {
             return getPropertyFromFile(propertyName);

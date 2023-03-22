@@ -16,9 +16,11 @@ public abstract class BaseTest {
 
     private static WebDriver driver;
     SearchSteps steps;
+
     public static WebDriver getDriver() {
         return driver;
     }
+
     @BeforeClass
     public void setUp() {
         driver = DriverFactory.getDriver(PropertyReader.getBrowser());
@@ -29,15 +31,17 @@ public abstract class BaseTest {
 
 
     @AfterClass
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();//выйти и закрыть все окна
-        }
+    }
 
     @AfterMethod
-    public void goBack(){ driver.navigate().back();}
+    public void goBack() {
+        driver.navigate().back();
+    }
 
     @DataProvider(name = "dataProvider")
-    public Object[][]dataProviderMethod(){
+    public Object[][] dataProviderMethod() {
         return new Object[][]{{"selenium java"}/*, {"selenium javaScript"}*/};
 
     }

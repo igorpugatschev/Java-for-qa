@@ -9,11 +9,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.io.File;
 
 
-
 public class DriverFactory {
 
-    private static WebDriver driver;
     private final static String DRIVER_PATH = "src/test/resources/";
+    private static WebDriver driver;
 
     public static WebDriver getDriver(Browser browser) {
         File file;

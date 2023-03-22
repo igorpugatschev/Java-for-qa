@@ -18,7 +18,7 @@ public class SearchSteps {
         return this;
     }
 
-    public SearchSteps verifyThatTooltipContainsPropperText(String text){
+    public SearchSteps verifyThatTooltipContainsPropperText(String text) {
         searchPage.assertThatVoiceSearchTooltipContainsText(text);
         return this;
     }
