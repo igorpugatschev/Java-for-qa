@@ -11,8 +11,8 @@ public class JsonPlaceHolderTest extends TestConfig {
         given()
                 .queryParam("postId", 1).log().uri()
                 .when().get(JSON_PLACEHOLDER_GET)
-                .then().log().body()
-                .statusCode(200);
+                .then().spec(responseSpecificationForGet)
+                .log().body();
     }
     @Test
     public void PUT(){
@@ -27,7 +27,7 @@ public class JsonPlaceHolderTest extends TestConfig {
                 .body(putBodyJson)
                 .log().uri()
                 .when().put(JSON_PLACEHOLDER_PUT)
-                .then()
+                .then().spec(responseSpecificationForGet)
                 .log().body().statusCode(200);
     }
 
@@ -36,8 +36,8 @@ public class JsonPlaceHolderTest extends TestConfig {
         given()
                 .log().uri()
                 .when().delete(JSON_PLACEHOLDER_DELETE)
-                .then()
-                .log().body().statusCode(200);
+                .then().spec(responseSpecificationForGet)
+                .log().body();
     }
 
     @Test
@@ -50,10 +50,10 @@ public class JsonPlaceHolderTest extends TestConfig {
 
         given()
                 .body(postBodyJson)
-                .log().uri()
+                .log().all()
                 .when().post(JSON_PLACEHOLDER_POST)
-                .then()
-                .log().body().statusCode(201);
+                .then().spec(responseSpecificationForPost)
+                .log().body();
     }
 
     @Test
@@ -81,7 +81,8 @@ public class JsonPlaceHolderTest extends TestConfig {
 
         given().spec(requestSpecificationFXml).body(postBodyXml).log().uri()
                 .when().post(REQUESTBIN_URL)
-                .then().log().body().statusCode(200);
+                .then().spec(responseSpecificationForGet)
+                .log().body();
     }
 
 }
