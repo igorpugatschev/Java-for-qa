@@ -7,7 +7,10 @@ import java.util.Map;
 
 import static constants.Constants.Actions.SWAPI_GET_PEOPLE;
 import static constants.Constants.Path.SWAPI_PATH;
+import static constants.Constants.Servers.REQUESTBIN_URL;
 import static io.restassured.RestAssured.*;
+//import static io.restassured.matcher.RestAssuredMatchers.matchesXsdInClasspath;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.equalTo;
 
 public class FirstTest extends TestConfig {
@@ -65,5 +68,44 @@ public class FirstTest extends TestConfig {
         System.out.println("headers--> " + headers);
         String contentType = response.getContentType();
         System.out.println("contenetType--> "+ contentType);
+    }
+
+    /**@Test
+    public void validateXmlSchema(){
+        given().log().uri()
+                .when().get("ввести запрос")
+                .then().body(matchesXsdInClasspath("xmlSchema.xsd")).log().body();
+
+    }
+    */
+
+    @Test
+    public void exampleJsonValidate(){
+        String postBodyXml = "<employees>\n" +
+                "\t<employee>\n" +
+                "\t\t<id>1</id>\n" +
+                "\t\t<firstName>Leonardo</firstName>\n" +
+                "\t\t<lastName>DiCaprio</lastName>\n" +
+                "\t\t<photo>http://1.bp.blogspot.com/-zvS_6Q1IzR8/T5l6qvnRmcI/AAAAAAAABcc/HXO7HDEJKo0/s200/Leonardo+Dicaprio7.jpg</photo>\n" +
+                "\t</employee>\n" +
+                "\t<employee>\n" +
+                "\t\t<id>2</id>\n" +
+                "\t\t<firstName>Johnny</firstName>\n" +
+                "\t\t<lastName>Depp</lastName>\n" +
+                "\t\t<photo>http://4.bp.blogspot.com/_xR71w9-qx9E/SrAz--pu0MI/AAAAAAAAC38/2ZP28rVEFKc/s200/johnny-depp-pirates.jpg</photo>\n" +
+                "\t</employee>\n" +
+                "\t<employee>\n" +
+                "\t\t<id>3</id>\n" +
+                "\t\t<firstName>Hritik</firstName>\n" +
+                "\t\t<lastName>Roshan</lastName>\n" +
+                "\t\t<photo>https://upload.wikimedia.org/wikipedia/commons/3/32/Hrithik_Roshan_in_2001.jpg</photo>\n" +
+                "\t</employee>\n" +
+                "</employees>";
+
+        given().spec(requestSpecificationFXml).body(postBodyXml).log().uri()
+                .when().post(REQUESTBIN_URL)
+                .then().body(matchesJsonSchemaInClasspath("jsonSchema.json"))
+                .log().body();
+
     }
 }

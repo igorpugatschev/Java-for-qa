@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "default": {},
+  "title": "Root Schema",
+  "required": [
+    "about",
+    "event_id",
+    "workflow_id",
+    "owner_id",
+    "deployment_id",
+    "timestamp",
+    "inspect",
+    "quickstart"
+  ],
+  "properties": {
+    "about": {
+      "type": "string",
+      "default": "",
+      "title": "The about Schema",
+      "examples": [
+        "Pipedream is the fastest way to connects APIs. Build and run workflows with code-level control when you need it — and no code when you don't."
+      ]
+    },
+    "event_id": {
+      "type": "string",
+      "default": "",
+      "title": "The event_id Schema",
+      "examples": [
+        "2NagdiPOmKsrUpe4Ld38La8ayuZ"
+      ]
+    },
+    "workflow_id": {
+      "type": "string",
+      "default": "",
+      "title": "The workflow_id Schema",
+      "examples": [
+        "p_vQCPNkj"
+      ]
+    },
+    "owner_id": {
+      "type": "string",
+      "default": "",
+      "title": "The owner_id Schema",
+      "examples": [
+        "o_ZjImJLJ"
+      ]
+    },
+    "deployment_id": {
+      "type": "string",
+      "default": "",
+      "title": "The deployment_id Schema",
+      "examples": [
+        "d_4ns112R8"
+      ]
+    },
+    "timestamp": {
+      "type": "string",
+      "default": "",
+      "title": "The timestamp Schema",
+      "examples": [
+        "2023-03-27T09:01:35.986Z"
+      ]
+    },
+    "inspect": {
+      "type": "string",
+      "default": "",
+      "title": "The inspect Schema",
+      "examples": [
+        "https://pipedream.com/@/p_vQCPNkj"
+      ]
+    },
+    "quickstart": {
+      "type": "string",
+      "default": "",
+      "title": "The quickstart Schema",
+      "examples": [
+        "https://pipedream.com/quickstart/"
+      ]
+    }
+  },
+  "examples": [{
+    "about": "Pipedream is the fastest way to connects APIs. Build and run workflows with code-level control when you need it — and no code when you don't.",
+    "event_id": "2NagdiPOmKsrUpe4Ld38La8ayuZ",
+    "workflow_id": "p_vQCPNkj",
+    "owner_id": "o_ZjImJLJ",
+    "deployment_id": "d_4ns112R8",
+    "timestamp": "2023-03-27T09:01:35.986Z",
+    "inspect": "https://pipedream.com/@/p_vQCPNkj",
+    "quickstart": "https://pipedream.com/quickstart/"
+  }]
+}
