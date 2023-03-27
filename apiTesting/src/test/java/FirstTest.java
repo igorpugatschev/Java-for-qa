@@ -3,6 +3,7 @@ import io.restassured.http.Headers;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.Map;
 
 import static constants.Constants.Actions.SWAPI_GET_PEOPLE;
@@ -107,5 +108,40 @@ public class FirstTest extends TestConfig {
                 .then().body(matchesJsonSchemaInClasspath("jsonSchema.json"))
                 .log().body();
 
+    }
+
+
+    //получение параметра по ключу
+    @Test
+    public void getMapOfElementsWithSomekey(){
+        Response response =
+                given().spec(requestSpecificationForSwapiTests).log().uri()
+                        .when().get(SWAPI_PATH + SWAPI_GET_PEOPLE);
+        System.out.println("response --> " + response.asString());
+        Map<String, ?> someObject = response
+                .path("results.find{it.name = 'Luke Skywalker'}");
+        System.out.println("someObject--> " + someObject);
+    }
+
+    @Test
+    public void getSingleElementWithSomekey(){
+        Response response =
+                given().spec(requestSpecificationForSwapiTests).log().uri()
+                        .when().get(SWAPI_PATH + SWAPI_GET_PEOPLE);
+        System.out.println("response --> " + response.asString());
+        String url = response
+                .path("results.find{it.name = 'Luke Skywalker'}.url");
+        System.out.println("url--> " + url);
+    }
+
+    @Test
+    public void getAllElementWithSomekey() {
+        Response response =
+                given().spec(requestSpecificationForSwapiTests).log().uri()
+                        .when().get(SWAPI_PATH + SWAPI_GET_PEOPLE);
+        System.out.println("response --> " + response.asString());
+        List films = response
+                .path("results.findAll{it.films}.name");
+        System.out.println("films--> " + films);
     }
 }
