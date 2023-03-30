@@ -1,4 +1,4 @@
-package tests.reqres.negative;
+package tests.rasp.negative;
 
 public class SearchTestNegative {
 }

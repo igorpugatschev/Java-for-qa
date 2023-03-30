@@ -11,7 +11,7 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <testng.version>7.7.0</testng.version>
+        <testng.version>7.4.0</testng.version>
         <slf4j-api.version>2.0.7</slf4j-api.version>
         <slf4j-simple.version>2.0.7</slf4j-simple.version>
         <json-schema-validator.version>5.3.0</json-schema-validator.version>
@@ -25,15 +25,6 @@
             <version>${json-schema-validator.version}</version>
             <scope>test</scope>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>5.3.0</version>
-            <scope>test</scope>
-        </dependency>
-
 
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
@@ -61,14 +52,14 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
+            <version>1.18.26</version>
             <scope>provided</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.json/json -->
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20220924</version>
+            <version>20230227</version>
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
@@ -76,8 +67,6 @@
             <version>5.3.0</version>
             <scope>compile</scope>
         </dependency>
-
-
     </dependencies>
 
 </project>
