@@ -1,0 +1,10 @@
+[0m[[0m[0mdebug[0m] [0m[0mjavaOptions: Vector(-Djna.platform.library.path=/usr/lib:/usr/lib, -Djna.loaded=true, -Djna.nosys=true, -Didea.managed=true, -Dlog4j.ignoreTCL=true, -Djnidispatch.path=/Users/evgeni/Library/Caches/JNA/temp/jna6279564045345719674.tmp, -Dhttp.nonProxyHosts=local|*.local|169.254/16|*.169.254/16, -Dswoval.tmpdir=/Users/evgeni/.sbt/1.0, -Dsbt.supershell=false, -DsocksNonProxyHosts=local|*.local|169.254/16|*.169.254/16, -Dftp.nonProxyHosts=local|*.local|169.254/16|*.169.254/16, -server, -Xmx1G, -XX:+UseG1GC, -XX:MaxGCPauseMillis=30, -XX:G1HeapRegionSize=16m, -XX:InitiatingHeapOccupancyPercent=75, -XX:+ParallelRefProcEnabled, -XX:+PerfDisableSharedMem, -XX:+AggressiveOpts, -XX:+OptimizeStringConcat, -XX:+HeapDumpOnOutOfMemoryError, -Djava.net.preferIPv4Stack=true, -Djava.net.preferIPv6Addresses=false)[0m
+[0m[[0m[0mdebug[0m] [0m[0mForking tests - parallelism = false[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreate a single-thread test executor[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunner for io.gatling.sbt.GatlingFramework produced 1 initial tasks for 1 tests.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(example.WikiLoad, sbt.ForkMain$SubclassFingerscan@365c0c58, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0mSimulation WikiLoad successful.[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 1 events.[0m
+[0m[[0m[0minfo[0m] [0m[0mSimulation(s) execution ended.[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	example.WikiLoad[0m

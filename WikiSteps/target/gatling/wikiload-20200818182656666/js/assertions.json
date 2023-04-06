@@ -1,0 +1,10 @@
+{
+  "simulation": "example.WikiLoad",
+  "simulationId": "wikiload",
+  "start": 1597775216666,
+  "description": "",
+  "scenarios": ["WIKI LOAD"],
+  "assertions": [
+
+  ]
+}
