@@ -1,5 +1,5 @@
-[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/evgeni/Desktop/otus_gatling_1/WikiSteps/src/test/resources/logback.xml,/Users/evgeni/Desktop/otus_gatling_1/WikiSteps/target/scala-2.12/test-classes/logback.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/evgeni/Desktop/otus_gatling_1/WikiSteps/src/test/resources/gatling.conf,/Users/evgeni/Desktop/otus_gatling_1/WikiSteps/target/scala-2.12/test-classes/gatling.conf)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/evgeni/Desktop/otus_gatling_1/WikiSteps/src/test/resources/recorder.conf,/Users/evgeni/Desktop/otus_gatling_1/WikiSteps/target/scala-2.12/test-classes/recorder.conf)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/evgeni/Desktop/otus_gatling_1/WikiSteps/src/test/resources/search.csv,/Users/evgeni/Desktop/otus_gatling_1/WikiSteps/target/scala-2.12/test-classes/search.csv)[0m
+[debug] Copy resource mappings: 
+[debug] 	(C:\Java-for-qa\WikiSteps\src\test\resources\gatling.conf,C:\Java-for-qa\WikiSteps\target\scala-2.12\test-classes\gatling.conf)
+[debug] 	(C:\Java-for-qa\WikiSteps\src\test\resources\logback.xml,C:\Java-for-qa\WikiSteps\target\scala-2.12\test-classes\logback.xml)
+[debug] 	(C:\Java-for-qa\WikiSteps\src\test\resources\recorder.conf,C:\Java-for-qa\WikiSteps\target\scala-2.12\test-classes\recorder.conf)
+[debug] 	(C:\Java-for-qa\WikiSteps\src\test\resources\search.csv,C:\Java-for-qa\WikiSteps\target\scala-2.12\test-classes\search.csv)
